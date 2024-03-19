@@ -1,0 +1,66 @@
+$dark-back-color: #61677A
+$light-back-color: #f1f1f1
+$primary-color: #D8D9DA
+$secondary-color: #FFF6E0
+$text-color: #272829
+    
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    font-family: "Silkscreen", sans-serif
+
+html, body
+    height: 100%
+
+body
+    background-color: $dark-back-color
+    display: grid
+    place-content: center
+    position: relative
+
+.logo
+    max-width: 20em
+    position: absolute
+    top: 10%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+.container
+    display: flex
+    flex-direction: column
+    background-color: $primary-color
+    border-radius: 20px
+    align-items: center
+
+    div
+        padding: 1.5em 4em
+
+h1
+    color: $text-color
+    font-weight: 700
+    font-size: 3rem
+    text-align: center
+
+.display-result
+    display: flex
+    align-items: center
+    justify-content: space-between
+    background-color: $light-back-color
+
+h2
+    color: $text-color
+    font-size: 2.5rem
+    text-align: center
+
+h3
+    color: $text-color
+    font-size: 2rem
+    text-align: center
+
+.choice-img
+    width: 8em
+
+.controls-inputs
+    .choice-img
+        width: 6em
