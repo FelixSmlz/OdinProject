@@ -20,6 +20,8 @@ body {
   max-width: 20em;
   position: absolute;
   left: 50%;
+  top: 9%;
+  transform: translate(-50%, -50%);
 }
 
 .container {
@@ -29,8 +31,8 @@ body {
   border-radius: 20px;
   align-items: center;
 }
-.container div {
-  padding: 1.5em 4em;
+.container > div {
+  padding: 3em 7em;
 }
 
 h1 {
@@ -43,8 +45,9 @@ h1 {
 .display-result {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10em;
   background-color: #f1f1f1;
+  width: 100%;
 }
 
 h2 {
@@ -63,6 +66,24 @@ h3 {
   width: 8em;
 }
 
-.controls-inputs .choice-img {
+.controls {
+  width: 100%;
+}
+.controls h2 {
+  margin-bottom: 1em;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.choice-input h4 {
+  color: #272829;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.choice-img {
   width: 6em;
 }/*# sourceMappingURL=style.css.map */
