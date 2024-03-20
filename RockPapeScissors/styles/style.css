@@ -42,7 +42,7 @@ h1 {
   text-align: center;
 }
 
-.display-result {
+.scoreboard {
   display: flex;
   align-items: center;
   gap: 10em;

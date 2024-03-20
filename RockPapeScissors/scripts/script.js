@@ -10,11 +10,14 @@ const imagesPath = {
   scissors: "./assets/img/Scissors.png",
 };
 
-let comChoice = getComChoice();
+// Get a random Choice from the Computer
 
+let comChoice = getComChoice();
 function getComChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
+
+// Get the input Choice from the Player
 
 function getPlayerChoice() {
   playerInputs.forEach((input) => {
@@ -26,6 +29,8 @@ function getPlayerChoice() {
     });
   });
 }
+
+// Display the Choices on the scoreboard
 
 function displayChoice(elementId, choice) {
   const imgElement = document.getElementById(elementId);
