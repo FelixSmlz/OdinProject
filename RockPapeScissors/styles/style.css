@@ -78,12 +78,18 @@ h3 {
   justify-content: space-between;
 }
 
+.choice-input {
+  position: relative;
+  cursor: pointer;
+}
 .choice-input h4 {
   color: #272829;
   font-size: 1.25rem;
   text-align: center;
 }
-
-.choice-img {
-  width: 6em;
+.choice-input:hover h4 {
+  color: #FFF6E0;
+}
+.choice-input .choice-img {
+  z-index: 2;
 }/*# sourceMappingURL=style.css.map */
