@@ -11,50 +11,44 @@ const imagesPath = {
   scissors: "./assets/img/Scissors.png",
 };
 
-// Get a random Choice from the Computer
 
-let comChoice = getComChoice();
+playerInputs.forEach((input) => {
+  input.addEventListener("click", () => {
+    const playerChoice = input.id;
+    const comChoice = getComChoice();
+    displayChoice("choice-player-img", playerChoice);
+    displayChoice("choice-com-img", comChoice);
+    displayResult(playerChoice, comChoice);
+  });
+});
+
+// Function to get a random choice for the computer
 function getComChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// Get the input Choice from the Player
-
-function getPlayerChoice() {
-  playerInputs.forEach((input) => {
-    input.addEventListener("click", () => {
-      const playerChoice = input.id;
-      displayPlayerChoice(playerChoice);
-      comChoice = getComChoice();
-      displayChoice("choice-com-img", comChoice);
-      displayResult(playerChoice, comChoice);
-    });
-  });
-}
-
-// Display the Choices on the scoreboard
-
+// Function to display choice
 function displayChoice(elementId, choice) {
-  const imgElement = document.getElementById(elementId);
-  imgElement.src = imagesPath[choice];
+  document.getElementById(elementId).src = imagesPath[choice];
 }
 
-function displayPlayerChoice(playerChoice) {
-  displayChoice("choice-player-img", playerChoice);
-}
-
+// Function to display the result
 function displayResult(playerChoice, comChoice) {
   if (playerChoice === comChoice) {
-    gameResult.innerHTML = "It's a tie!";
+    displayGameResult("It's a tie!", "#272829");
   } else if (
     (playerChoice === "rock" && comChoice === "scissors") ||
     (playerChoice === "paper" && comChoice === "rock") ||
     (playerChoice === "scissors" && comChoice === "paper")
   ) {
-    gameResult.innerHTML = "You win!";
+    displayGameResult("You win!", "#009200");
   } else {
-    gameResult.innerHTML = "You lose!";
+    displayGameResult("You lose!", "#ca0000");
   }
 }
 
-getPlayerChoice();
+// Function to display the game result
+function displayGameResult(message, color) {
+  gameResult.innerHTML = message;
+  gameResult.style.color = color;
+}
