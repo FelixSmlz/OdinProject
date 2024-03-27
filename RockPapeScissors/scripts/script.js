@@ -1,8 +1,9 @@
 const inputRock = document.getElementById("rock");
 const inputPaper = document.getElementById("paper");
 const inputScissors = document.getElementById("scissors");
+const playerInputs = document.querySelectorAll(".choice-input");
+const gameResult = document.getElementById("game-result");
 
-const playerInputs = [inputRock, inputPaper, inputScissors];
 const choices = ["rock", "paper", "scissors"];
 const imagesPath = {
   rock: "./assets/img/Rock.png",
@@ -26,6 +27,7 @@ function getPlayerChoice() {
       displayPlayerChoice(playerChoice);
       comChoice = getComChoice();
       displayChoice("choice-com-img", comChoice);
+      displayResult(playerChoice, comChoice);
     });
   });
 }
@@ -39,6 +41,20 @@ function displayChoice(elementId, choice) {
 
 function displayPlayerChoice(playerChoice) {
   displayChoice("choice-player-img", playerChoice);
+}
+
+function displayResult(playerChoice, comChoice) {
+  if (playerChoice === comChoice) {
+    gameResult.innerHTML = "It's a tie!";
+  } else if (
+    (playerChoice === "rock" && comChoice === "scissors") ||
+    (playerChoice === "paper" && comChoice === "rock") ||
+    (playerChoice === "scissors" && comChoice === "paper")
+  ) {
+    gameResult.innerHTML = "You win!";
+  } else {
+    gameResult.innerHTML = "You lose!";
+  }
 }
 
 getPlayerChoice();
